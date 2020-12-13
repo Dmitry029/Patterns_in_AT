@@ -1,22 +1,18 @@
 package com.udemy.seleniumdesign.factory;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
+public class GoogleFrench extends GooglePage {
 
-public class GoogleEnglish extends GooglePage {
 
-    public GoogleEnglish(WebDriver driver) {
+    public GoogleFrench(WebDriver driver) {
         super(driver);
-    }
-
+     }
 
     @Override
     public void launchSite() {
-        driver.get("https://www.google.com/");
+        driver.get("https://www.google.fr/");
     }
-}
+ }
