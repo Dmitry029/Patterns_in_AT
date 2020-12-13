@@ -1,12 +1,13 @@
-package com.udemy.seleniumdesign.srp;
+package com.udemy.seleniumdesign.srp.resultPage;
 
+import com.udemy.seleniumdesign.srp.common.AbstractComponents;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ResultStat extends AbstractComponents{
+public class ResultStat extends AbstractComponents {
 
-    @FindBy(css = "serp-adv__found")
+    @FindBy(css = ".serp-adv__found")
     WebElement status;
 
 

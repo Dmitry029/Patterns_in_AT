@@ -1,10 +1,12 @@
-package com.udemy.seleniumdesign.srp;
+package com.udemy.seleniumdesign.srp.mainPage;
 
+import com.udemy.seleniumdesign.srp.common.AbstractComponents;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import com.udemy.seleniumdesign.srp.common.AbstractComponents;
 
-public class NavigationBar extends AbstractComponents {
+public class MainPageNavigationBar extends AbstractComponents {
 
     @FindBy(css = ".services-new__list")
     WebElement bar;
@@ -19,7 +21,7 @@ public class NavigationBar extends AbstractComponents {
     WebElement mapsIcon;
 
 
-    public NavigationBar(WebDriver driver) {
+    public MainPageNavigationBar(WebDriver driver) {
         super(driver);
     }
 

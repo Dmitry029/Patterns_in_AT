@@ -1,4 +1,4 @@
-package com.udemy.seleniumdesign.srp;
+package com.udemy.seleniumdesign.srp.common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SearchSuggestion extends AbstractComponents {
 
-    @FindBy(css = "li[data-index]")
+    @FindBy(css = "li[class^=mini-suggest]")
     List<WebElement> suggestions;
 
     public SearchSuggestion(final WebDriver driver) {
@@ -16,6 +16,13 @@ public class SearchSuggestion extends AbstractComponents {
     }
 
     public void clickSuggestionByIndex(int index) {
+
+        int count = 0;
+        do{
+            count++;
+        }while (suggestions.size() < 9 && count < 3);
+
+        System.out.println("**** count " + count + "   size " + suggestions.size());
         this.suggestions.get(index - 1).click();
     }
 

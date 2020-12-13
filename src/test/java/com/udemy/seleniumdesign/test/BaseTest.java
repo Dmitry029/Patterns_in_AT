@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import java.util.concurrent.TimeUnit;
+
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class BaseTest {
@@ -18,11 +20,12 @@ public class BaseTest {
         //this.driver = new FirefoxDriver();
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
         this.driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @AfterTest
     public void quitDriver() {
-        Uninterruptibles.sleepUninterruptibly(2, SECONDS);
+       // Uninterruptibles.sleepUninterruptibly(2, SECONDS);
         this.driver.quit();
     }
 
