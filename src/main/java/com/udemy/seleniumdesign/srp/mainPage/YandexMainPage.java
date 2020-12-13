@@ -17,7 +17,7 @@ public class YandexMainPage {
     }
 
     public void getTo(){
-        this.driver.get("https://yandex.by/");
+        this.driver.get("https://yandex.by");
     }
 
     public MainPageSearchWidget getSearchWidget(){

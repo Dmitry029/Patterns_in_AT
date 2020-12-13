@@ -39,6 +39,7 @@ public class YandexTest extends BaseTest {
         System.out.println(yandexResultPage.getResultStat().getStatus());
 
         //yandexResultPage.getResultPageNavigationBar().goToNews();
+
     }
 
     @DataProvider
