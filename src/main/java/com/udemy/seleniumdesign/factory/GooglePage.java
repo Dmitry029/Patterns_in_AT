@@ -1,5 +1,6 @@
 package com.udemy.seleniumdesign.factory;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,12 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public abstract class GooglePage {
 
     public WebDriver driver;
     public WebDriverWait wait;
 
+    @FindBy(css = "div#gws-output-pages-elements-homepage_additional_languages__als a")
+    WebElement language;
 
     @FindBy(name = "q")
     WebElement searchBox;
@@ -33,7 +37,13 @@ public abstract class GooglePage {
     public abstract void launchSite();
 
     public void search(String keyword){
-        searchBox.sendKeys(keyword);
+        //searchBox.sendKeys(keyword);
+
+        for(char ch : keyword.toCharArray()){
+            Uninterruptibles.sleepUninterruptibly(5, TimeUnit.MILLISECONDS);
+            this.searchBox.sendKeys(ch + "");
+        }
+
         wait.until((d) -> searchButton.isDisplayed());
         searchButton.click();
     };

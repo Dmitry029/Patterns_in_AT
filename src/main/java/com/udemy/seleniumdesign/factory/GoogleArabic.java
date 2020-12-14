@@ -5,11 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GoogleArabic extends GooglePage {
-
-
-    @FindBy(name = "btnI")
-    WebElement searchButton;
+class GoogleArabic extends GooglePage {
 
     @FindBy(css = ".hOoLGe")
     WebElement keyboardIcon;
@@ -26,18 +22,13 @@ public class GoogleArabic extends GooglePage {
     @Override
     public void launchSite() {
         driver.get("https://www.google.com.sa/");
+        language.click();
     }
 
     public void search(String keyword){
         wait.until((d) -> keyboardIcon.isDisplayed());
         keyboardIcon.click();
         wait.until((d) -> keyboard.isDisplayed());
-
-        searchBox.sendKeys(keyword);
-        wait.until((d) -> searchButton.isDisplayed());
-        searchButton.click();
-
-        //super.search(keyword);
+        super.search(keyword);
     }
-
 }
