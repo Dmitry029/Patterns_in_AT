@@ -11,7 +11,7 @@ public class GoogleSearchTest extends BaseTest {
     private GooglePage googlePage;
 
     @Test(dataProvider = "getData")
-    public void searchTest(String language, String keyword){
+    public void searchTest(String language, String keyword) {
 
         this.googlePage = GoogleFactory.get(language, driver);
         this.googlePage.launchSite();
@@ -22,7 +22,7 @@ public class GoogleSearchTest extends BaseTest {
     }
 
     @DataProvider
-    public Object[][] getData(){
+    public Object[][] getData() {
         return new Object[][]{
                 {"ENG", "Selenium"},
                 {"FR", "Docker"},

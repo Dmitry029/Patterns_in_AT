@@ -24,6 +24,8 @@ public class GoogleFactory {
 
     public static GooglePage get(String language, WebDriver driver) {
         return MAP.get(language).apply(driver);
+
+
     }
 
 }
